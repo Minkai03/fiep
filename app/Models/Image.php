@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+
+
+    // Relacion Polimorfica lleva el mismo nombre de imageable por imageable_id de la tabla imageable.
+    // Se relaciona polimorficamente con la palabra reservada ( morphTo )
     public function imageable(){
-        return $this->morphTo(Image::class, 'imageable');
+        return $this->morphTo();
     }
 }
